@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="mt-5">All Books</h1>
+{% comment %} 
+<ul>
+    
+{% for object in object_list %}
+    <li>{{ object }}</li>
+{% endfor %}
+
+</ul> 
+{% endcomment %}
+<div class="card-deck">
+{% for object in object_list %}
+ 
+<div class="card">
+  <img class="card-img-top" style="max-width: 300px"
+    src="https://www.adnu.edu.ph/wp-content/uploads/2014/03/AdNU-Seal.png" alt="{{object}}">
+  <div class="card-body">
+    <strong>{{ object.title }}</strong> 
+    <p>Author: {{ object.author }}</p>
+    <p>Publisher: {{ object.publisher }}</p>
+    <p>Publication Year: {{ object.publication_year  }}</p>
+    <p>ISBN: {{ object.isbn  }}</p>
+    <p>Notes: {{ object.notes  }}</p>
+  </div>
+</div>
+{% endfor %}
+
+</div>
+{% endblock %}
+
+
